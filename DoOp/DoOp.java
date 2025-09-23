@@ -2,7 +2,7 @@ public class DoOp {
     public static String operate(String[] args) {
         // your code here
         if (args.length <= 2) {
-            return "it depend on the input.";
+            return "Error";
         }
         int num1 = Integer.parseInt(args[0]);
         String operation_sign = args[1];
@@ -18,10 +18,3 @@ public class DoOp {
         return result;
     }
 }
-
-/*
- * 3
- * 0
- * Error
- * it depend on the input.
- */
