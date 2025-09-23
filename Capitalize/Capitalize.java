@@ -12,30 +12,29 @@ public class Capitalize {
         try (BufferedReader reader = new BufferedReader(new FileReader(sourceFile));
                 BufferedWriter writer = new BufferedWriter(new FileWriter(destinationFile))) {
 
-            StringBuilder text = new StringBuilder();
             String line;
+            boolean firstLine = true;
+
             while ((line = reader.readLine()) != null) {
-                text.append(line).append(" ");
-            }
 
-            String content = text.toString();
-            String[] words = content.trim().split("\\s+");
-
-            StringBuilder result = new StringBuilder();
-            for (int i = 0; i < words.length; i++) {
-                String word = words[i];
-                if (!word.isEmpty()) {
-                    result.append(Character.toUpperCase(word.charAt(0)));
-                    result.append(word.substring(1));
-
-                    if (i < words.length - 1) {
-                        result.append(" ");
+                if (!firstLine) {
+                    writer.newLine();
+                }
+                String[] words = line.trim().split("\\s+");
+                StringBuilder resultBuilder = new StringBuilder();
+                for (int i = 0; i < words.length; i++) {
+                    String word = words[i];
+                    if (!word.isEmpty()) {
+                        resultBuilder.append(Character.toUpperCase(word.charAt(0)));
+                        resultBuilder.append(word.substring(1));
+                        if (i < words.length - 1) {
+                            resultBuilder.append(" ");
+                        }
                     }
                 }
+                writer.write(resultBuilder.toString());
+                firstLine = false;
             }
-            writer.write(result.toString());
         }
     }
 }
-
-// true
