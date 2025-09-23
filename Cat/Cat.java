@@ -1,18 +1,20 @@
-import java.io.*;
-import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class Cat {
     public static void cat(String[] args) throws IOException {
-        // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        for (int i = 0; i < args.length; i++) {
-            String path = args[i];
-            File file = new File(path);
-            Scanner sc = new Scanner(file);
-            while (sc.hasNextLine())
-                System.out.println(sc.nextLine());
-
-            sc.close();
+        if (args.length == 0) {
+            return;
         }
 
+        String fileName = args[0];
+        try (InputStream inputStream = new FileInputStream(fileName)) {
+            byte[] buffer = new byte[4096];
+            int bytesRead;
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                System.out.write(buffer, 0, bytesRead);
+            }
+        }
     }
 }
