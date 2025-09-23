@@ -11,10 +11,10 @@ public class DoOp {
             case "-" -> String.valueOf(num1 - num2);
             case "+" -> String.valueOf(num1 + num2);
             case "*" -> String.valueOf(num1 * num2);
-            case "/" -> String.valueOf(num1 / num2);
+            case "/" -> (num2 != 0) ? String.valueOf(num1 / 2) : "Error";
+            case "%" -> (num2 != 0) ? String.valueOf(num1 % num2) : "Error";
             default -> "Error";
         };
-        // String.valueOf(result);
         return result;
     }
 }
