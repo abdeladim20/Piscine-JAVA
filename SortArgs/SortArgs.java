@@ -1,5 +1,9 @@
 public class SortArgs {
     public static void sort(String[] args) {
+        if (args.length == 0) {
+            System.out.println();
+            return;
+        }
         for (int i = 0; i < args.length; i++) {
             for (int j = i + 1; j < args.length; j++) {
                 int temp = 0;
