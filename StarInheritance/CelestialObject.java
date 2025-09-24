@@ -4,7 +4,6 @@ public class CelestialObject {
     private double x;
     private double y;
     private double z;
-    private double magnitude;
     private String name;
     public static final double KM_IN_ONE_AU = 150_000_000;
 
@@ -52,14 +51,6 @@ public class CelestialObject {
 
     public void setName(String name2) {
         name = name2;
-    }
-
-    public double getMagnitude(){
-        return magnitude;
-    }
-
-    public void setMagnitude(double magnitude) {
-        this.magnitude = magnitude;
     }
 
     public static double getDistanceBetween(CelestialObject object1, CelestialObject object2) {
