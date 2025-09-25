@@ -47,3 +47,9 @@ public class Star extends CelestialObject {
         return Objects.hash(getName(), getX(), getY(), getZ(), magnitude);
     }
 }
+
+/*
+ * Naboo circles around Betelgeuse at the 12220.902 AU
+ * Soleil circles around Soleil at the 0.000 AU
+ * Betelgeuse shines at the 1289.300 magnitude
+ */
