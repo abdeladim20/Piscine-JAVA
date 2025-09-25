@@ -3,12 +3,12 @@ import java.util.List;
 import java.util.HashMap;
 
 public class Galaxy {
-    private  ArrayList<CelestialObject> celestialObjects;
+    private  List<CelestialObject> celestialObjects;
     public Galaxy() {
         celestialObjects = new ArrayList<CelestialObject>();
     }
 
-    public ArrayList<CelestialObject> getCelestialObjects() {
+    public List<CelestialObject> getCelestialObjects() {
         return celestialObjects;
     }
 
