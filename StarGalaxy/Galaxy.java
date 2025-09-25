@@ -4,7 +4,7 @@ import java.util.List;
 public class Galaxy {
     private List<CelestialObject> celestialObjects;
 
-    Galaxy() {
+    public Galaxy() {
         celestialObjects = new ArrayList<>();
     }
 
@@ -15,5 +15,5 @@ public class Galaxy {
     public void addCelestialObject(CelestialObject CelestialObject) {
         this.celestialObjects.add(CelestialObject);
     }
-    
+
 }
