@@ -55,7 +55,7 @@ public class Character {
         String line1 = String.format(dashes + "\n" + "Characters currently fighting :\n");
         String characLine = "";
         for (Character character : allCharacters) {
-            characLine += "- " + character + "\n";
+            characLine += " - " + character + "\n";
         }
         return line1 + characLine + dashes + "\n";
     }
