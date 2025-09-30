@@ -6,7 +6,7 @@ public class Character {
     private final int maxHealth;
     private int currentHealth;
     private final String name;
-    private static List<Character> characters = new ArrayList<>();
+    private static List<Character> allCharacters = new ArrayList<>();
 
     public int getMaxHealth() {
         return maxHealth;
@@ -24,7 +24,7 @@ public class Character {
         this.currentHealth = maxHealth;
         this.name = name;
         this.maxHealth = maxHealth;
-        characters.add(this);
+        allCharacters.add(this);
     }
 
     @Override
@@ -49,12 +49,12 @@ public class Character {
 
     public static String printStatus() {
         String dashes = "-".repeat(42);
-        if (characters.isEmpty()) {
+        if (allCharacters.isEmpty()) {
             return String.format(dashes + "\nNobody's fighting right now !\n" + dashes + "\n");
         }
         String line1 = String.format(dashes + "\n" + "Characters currently fighting :\n");
         String characLine = "";
-        for (Character character : characters) {
+        for (Character character : allCharacters) {
             characLine += "- " + character + "\n";
         }
         return line1 + characLine + dashes + "\n";
