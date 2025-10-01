@@ -8,6 +8,6 @@ public class DeadCharacterException extends Exception {
     }
 
     public String getMessage() {
-        return String.format("The %s %s is dead.", getClass().getName().toLowerCase(), this.character.getName());
+        return String.format("The %s %s is dead.", this.character.getClass().getName().toLowerCase(), this.character.getName());
     }
 }
