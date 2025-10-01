@@ -16,7 +16,7 @@ public abstract class Character {
         return currentHealth;
     }
 
-    public void setCurrentHealth(int newHealth) {
+    protected void setCurrentHealth(int newHealth) {
         if (newHealth > this.maxHealth) {
             this.currentHealth = this.maxHealth;
         } else if (newHealth < 0) {
