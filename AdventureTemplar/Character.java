@@ -16,11 +16,13 @@ public class Character {
         return currentHealth;
     }
 
-    public void setCurrentHealth(int currentHealth) {
-        if (this.currentHealth + currentHealth > this.maxHealth) {
-            this.currentHealth = maxHealth;
+    public void setCurrentHealth(int newHealth) {
+        if (newHealth > this.maxHealth) {
+            this.currentHealth = this.maxHealth;
+        } else if (newHealth < 0) {
+            this.currentHealth = 0;
         } else {
-            this.currentHealth += currentHealth;
+            this.currentHealth = newHealth;
         }
     }
 
