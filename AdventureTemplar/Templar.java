@@ -16,7 +16,7 @@ public class Templar extends Character implements Healer, Tank {
     
     public void heal(Character character) {
         int health = character.getCurrentHealth() + this.healCapacity;
-        character.setCurrentHealth(Math.min(health, getMaxHealth()));
+        character.setCurrentHealth(Math.min(health, character.getMaxHealth()));
     }
 
     public int getShield() {
