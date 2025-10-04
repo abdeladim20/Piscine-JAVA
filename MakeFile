@@ -1,0 +1,18 @@
+SRC_DIRS := .
+BUILD_DIR := build
+SOURCES := $(wildcard $(SRC_DIRS)/**/*.java) $(wildcard $(SRC_DIRS)/*.java)
+CLASSES := $(SOURCES:$(SRC_DIRS)/%.java=$(BUILD_DIR)/%.class)
+
+.PHONY: all run clean
+
+all: $(CLASSES)
+
+$(BUILD_DIR)/%.class: $(SRC_DIRS)/%.java
+	@mkdir -p $(dir $@)
+	javac -d $(BUILD_DIR) $<
+
+run: all
+	java -cp $(BUILD_DIR) ExerciseRunner
+
+clean:
+	rm -rf $(BUILD_DIR)
