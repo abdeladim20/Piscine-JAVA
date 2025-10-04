@@ -22,12 +22,6 @@ public class StreamCollect {
 
     public static String orderAndConcatWithSharp(Stream<String> s) {
         // your code here
-        return s.sorted().collect(Collectors.joining(" # ", "##{", "}"));
+        return s.sorted().collect(Collectors.joining(" # ", "{", "}"));
     }
 }
-
-/*
-* {B=[Bonjour, bonsoir], L=[le], M=[monde !]}
-* {0=Optional[424], 1=Optional[97], 2=Optional[48354], 3=Optional[5843]}
-* ##{Bordeaux # Hello # how are you ? # where do you live ?}
- */
