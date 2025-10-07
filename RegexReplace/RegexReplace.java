@@ -33,7 +33,6 @@ public class RegexReplace {
         }
 
         String[] domains = parts[1].split("\\.");
-        // System.out.println(domains.length);
         if (domains.length == 3) {
             username += "*".repeat(domains[0].length())+"."+domains[1]+"."+"*".repeat(domains[2].length());
         } else if (domains.length == 2) {
@@ -44,17 +43,6 @@ public class RegexReplace {
                 username += "." + domains[1];
             }
         }
-
-
         return username;
     }
 }
-/*
-32 et 50
-32 cm et 50 €
-32cms et 50€!
-l lapin jou à la bel ball avec d animau rigolo pour gagner l bill bleu
-john.***@*******.com
-jan*@*******.co.***
-jac***@*******.**
- */
