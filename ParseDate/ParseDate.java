@@ -9,11 +9,17 @@ public class ParseDate {
 
     public static LocalDateTime parseIsoFormat(String stringDate) {
         // your code here
+        if (stringDate == null) {
+            return null;
+        }
         return LocalDateTime.parse(stringDate);
     }
 
     public static LocalDate parseFullTextFormat(String stringDate) {
         // your code here
+        if (stringDate == null) {
+            return null;
+        }
         DateTimeFormatter formatter = new java.time.format.DateTimeFormatterBuilder()
                 .parseCaseInsensitive()
                 .appendPattern("EEEE dd MMMM yyyy")
