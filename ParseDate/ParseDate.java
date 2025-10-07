@@ -22,6 +22,9 @@ public class ParseDate {
     }
 
     public static LocalTime parseTimeFormat(String stringDate) {
+        if (stringDate == null) {
+            return null;
+        } 
         String cleanedString = stringDate.replaceAll("[^0-9 ]", "").trim();
         String[] numbers = cleanedString.split("\\s+");
 
